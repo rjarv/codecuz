@@ -7,7 +7,7 @@ import random
 CHOICES = {'rock': 1, 'scissors': 2, 'paper': 3}
 PLAYER = "Player 1"
 
-def score(computer: str, player: str):
+def score(computer: str, player: str) -> str:
     '''scores the results and returns the winner'''
     tally = CHOICES[computer] - CHOICES[player]
     if tally in [-1, 2]:
@@ -16,7 +16,7 @@ def score(computer: str, player: str):
         return "TIE"
     return PLAYER
 
-def computer_choice():
+def computer_choice() -> str:
     '''uses a random generator to play for computer'''
     return random.choice(list(CHOICES.keys()))
 

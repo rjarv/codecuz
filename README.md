@@ -2,9 +2,24 @@
 Just some fun projects for family
 
 
+## Getting started on RaspberryPI
+from the terminal...
+### Install git
+``` bash
+> sudo apt-get update
+> sudo apt-get install git
+```
+
+### Download repository
+``` bash
+> git clone https://github.com/rjarv/codecuz.git
+> cd codecuz
+```
+
+
 ## How to play rock, paper, scissors...
 
-### from the terminal
+from the terminal
 ``` bash
 > python ropasci.py rock
 ```

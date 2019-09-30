@@ -20,14 +20,34 @@ def computer_choice() -> str:
     '''uses a random generator to play for computer'''
     return random.choice(list(CHOICES.keys()))
 
+def user_choice():
+    game = \
+    """
+    Let's play Rock, Paper, Scissors!
+    You pick first.
+    1 - Rock
+    2 - Paper
+    3 - Scissors
+    4 - Exit game
+    Your choice: """
+    return int(input(game))
+
 
 if __name__ == "__main__":
-    import sys
     COMPUTER_CHOICE = computer_choice()
-    PLAYER_CHOICE = sys.argv[1].lower()
-    if PLAYER_CHOICE not in ['rock', 'paper', 'scissors']:
-        print("Please choose either: rock, paper, or scissors.")
-        sys.exit()
-    print(f'{PLAYER} played {PLAYER_CHOICE}.')
-    print(f'Computer played {COMPUTER_CHOICE}.')
-    print('The winner is...', score(COMPUTER_CHOICE, PLAYER_CHOICE))
+    MENU_CHOICE = user_choice()
+    PLAYER_CHOICE = 'rock'
+    while MENU_CHOICE != 4:
+        if MENU_CHOICE == 1:
+            PLAYER_CHOICE = 'rock'
+        if MENU_CHOICE == 2:
+            PLAYER_CHOICE = 'paper'
+        if MENU_CHOICE == 3:
+            PLAYER_CHOICE = 'scissors'
+
+        print(f'\n\n{PLAYER} played {PLAYER_CHOICE}.')
+        print(f'Computer played {COMPUTER_CHOICE}')
+        print('The winner is...', score(COMPUTER_CHOICE, PLAYER_CHOICE))
+
+        MENU_CHOICE = user_choice()
+        COMPUTER_CHOICE = computer_choice()
